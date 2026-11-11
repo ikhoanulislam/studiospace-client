@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudioSpace — Studio Rental & Booking Platform
 
-## Getting Started
+StudioSpace is a web-based platform that helps users discover and book creative spaces such as photography studios, podcast studios, and other rental spaces. Hosts can list and manage their studios, while users can explore available spaces and manage their bookings.
 
-First, run the development server:
+## Live Website
+
+**Live URL:** Coming soon — deployment pending.
+
+## Features
+
+- **User Authentication:** Register and log in using email and password.
+- **Google Login:** Sign in using Google authentication.
+- **Explore Studios:** Browse available studios and view their details.
+- **Studio Details:** View studio descriptions, pricing, amenities, capacity, and host information.
+- **Studio Booking:** Submit booking requests by selecting a date and time.
+- **My Bookings:** View booking history and cancel eligible bookings.
+- **Host Dashboard:** Manage studio bookings and confirm booking requests.
+- **Studio Management:** Hosts can add, edit, and delete their studio listings.
+- **Host Application:** Users can apply to become hosts.
+- **Admin Dashboard:** Administrators can manage host applications and platform information.
+- **Responsive Design:** Designed for desktop and mobile devices.
+- **Light & Dark Mode:** Switch between light and dark themes.
+
+## Technology Stack
+
+### Frontend
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Google OAuth
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+
+## Project Structure
+
+```text
+studiospace-client/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── admin/
+│   │   ├── add-studio/
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── host/
+│   │   ├── login/
+│   │   ├── my-bookings/
+│   │   ├── my-listings/
+│   │   ├── profile/
+│   │   ├── signup/
+│   │   └── studios/
+│   └── components/
+├── package.json
+└── README.md
+```
+
+## Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ikhoanulislam/studiospace-client.git
+```
+
+### 2. Navigate to the Project
+
+```bash
+cd studiospace-client
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env.local` file in the project root.
+
+Add the required environment variables:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5002
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_google_client_id
+```
+
+Use the actual variable names referenced in the project source code. Configure Google OAuth credentials if Google Login is enabled.
+
+Never upload real credentials or secret keys to GitHub.
+
+### 5. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Make sure the StudioSpace backend is also running.
 
-## Learn More
+## Backend Repository
 
-To learn more about Next.js, take a look at the following resources:
+[StudioSpace Server](https://github.com/ikhoanulislam/studiospace-server)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Developer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Ikhoanul Islam**
 
-## Deploy on Vercel
+Civil Engineering Student  
+Gopalganj Science and Technology University
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*StudioSpace — Find Your Perfect Creative Space.*
