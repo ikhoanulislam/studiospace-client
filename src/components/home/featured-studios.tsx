@@ -20,8 +20,14 @@ type StudiosResponse = {
 };
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
-const FALLBACK_IMAGE =
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85";
+const FALLBACK_IMAGES = [
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
+];
 
 export default function FeaturedStudios() {
   const [studios, setStudios] = useState<Studio[]>([]);
@@ -108,7 +114,7 @@ export default function FeaturedStudios() {
           </p>
         ) : (
           <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {studios.map((studio) => (
+            {studios.map((studio, index) => (
               <article key={studio.id} className="group overflow-hidden">
                 <Link
                   href={`/studios/${studio.id}`}
@@ -118,7 +124,7 @@ export default function FeaturedStudios() {
                     role="img"
                     aria-label={studio.name}
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url("${studio.image || FALLBACK_IMAGE}")` }}
+                    style={{ backgroundImage: `url("${studio.image?.trim() || FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]}")` }}
                   />
                   <div className="absolute left-4 top-4 rounded-full bg-white/95 px-4 py-2 text-xs font-semibold text-[#171717] backdrop-blur">
                     {studio.category}

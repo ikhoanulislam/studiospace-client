@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import FeaturedStudios from "@/components/home/featured-studios";
+import EventsPreview from "@/components/home/events-preview";
 
 const categories = [
   { name: "Photography", icon: Camera },
@@ -293,6 +294,8 @@ export default function Home() {
           })}
         </div>
       </section>
+
+      <EventsPreview />
 
       {/* How It Works */}
       <section

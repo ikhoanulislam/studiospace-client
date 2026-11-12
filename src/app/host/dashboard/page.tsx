@@ -328,6 +328,10 @@ export default function HostDashboard() {
             </p>
           </div>
 
+          <Link href="/host/events" className="inline-flex items-center gap-2 rounded-full bg-[#F15A3B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#D94A30]">
+            <CalendarDays size={16} /> Manage Events
+          </Link>
+
           <div className="flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-700 dark:border-green-900 dark:bg-green-950 dark:text-green-400">
             <ShieldCheck size={17} />
             Host Approved
