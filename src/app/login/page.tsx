@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { Loader2, LockKeyhole, Mail } from "lucide-react";
 
-const API_URL = "http://localhost:5002";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function LoginPage() {
   const router = useRouter();
@@ -234,22 +234,28 @@ export default function LoginPage() {
         </div>
 
         <div className="flex justify-center">
-          <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              if (credentialResponse.credential) {
-                handleGoogleLogin(credentialResponse.credential);
-              } else {
-                setMessage("Google authentication failed.");
-              }
-            }}
-            onError={() => {
-              setMessage("Google Login failed. Please try again.");
-            }}
-            text="continue_with"
-            theme="outline"
-            shape="rectangular"
-            width="320"
-          />
+          {process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ? (
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                if (credentialResponse.credential) {
+                  handleGoogleLogin(credentialResponse.credential);
+                } else {
+                  setMessage("Google authentication failed.");
+                }
+              }}
+              onError={() => {
+                setMessage("Google Login failed. Please try again.");
+              }}
+              text="continue_with"
+              theme="outline"
+              shape="rectangular"
+              width="320"
+            />
+          ) : (
+            <p className="text-center text-sm text-amber-600 dark:text-amber-400">
+              Google Login is temporarily unavailable. Please use email and password.
+            </p>
+          )}
         </div>
 
         <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">

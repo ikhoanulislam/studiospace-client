@@ -56,7 +56,7 @@ export default function AddStudioPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5002/api/studios", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/studios`, {
         method: "POST",
         credentials: "include",
         headers: {

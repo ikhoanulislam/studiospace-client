@@ -30,7 +30,7 @@ type ApiResponse = {
   data: Studio[];
 };
 
-const API_URL = "http://localhost:5002/api/studios";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/studios`;
 
 const studioVisuals: Record<
   string,

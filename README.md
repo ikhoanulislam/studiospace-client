@@ -4,7 +4,7 @@ StudioSpace is a web-based platform that helps users discover and book creative 
 
 ## Live Website
 
-**Live URL:** Coming soon — deployment pending.
+**Live URL:** https://studiospace-client-swart.vercel.app/
 
 ## Features
 
